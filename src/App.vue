@@ -1,25 +1,47 @@
 <script setup>
-const image = {
-    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-    title: 'Water surrounded by trees and mountains',
-    alt: 'Water surrounded by trees and mountains',
-    link: 'https://unsplash.com/photos/NRQV-hBF10M',
-}
+import people from './data/data'
 </script>
 
 <template>
-    <section class="container mx-auto p-10">
-        <h1 class="text-4xl mb-10 text-left">Data Project</h1>
-        <section class="main flex space-x-4">
-            <div class="flex space-y-4 flex-col w-1/2">
-                <img v-bind="image">
-                <h2 class="text-xl text-left"> {{ image.title }}</h2>
-                <a target="_blank" :href="image.link" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded w-40 text-center">
-                    Image Source
-                </a>
-            </div>
+    <section>
+        <h1 style="text-align:center;margin:40px 0px;font-size:40px">Data Example</h1>
+        <section class="grid md:grid-cols-3 gap-8">
+            <!-- <section class="person">
+                <img :src="people[0].image" alt="Jane Doe">
+                <div>
+                    <h1 class="text-3xl font-semibold py-2">{{ people[0].name }}</h1>
+                    <h2 class="text-2xl font-normal">{{people[0].designation}}</h2>
+                    <p class="text-xl py-2">{{ people[0].location }}</p>
+                </div>
+            </section>
+            <section class="person">
+                <img :src="people[1].image" alt="Jane Doe">
+                <div>
+                    <h1 class="text-3xl font-semibold py-2">{{ people[1].name }}</h1>
+                    <h2 class="text-2xl font-normal">{{people[1].designation}}</h2>
+                    <p class="text-xl py-2">{{ people[1].location }}</p>
+                </div>
+            </section>
+            <section class="person">
+                <img :src="people[2].image" alt="Jane Doe">
+                <div>
+                    <h1 class="text-3xl font-semibold py-2">{{ people[2].name }}</h1>
+                    <h2 class="text-2xl font-normal">{{people[2].designation}}</h2>
+                    <p class="text-xl py-2">{{ people[2].location }}</p>
+                </div>
+            </section>
+             -->
+
+             <!-- loops people -->
+             <section v-for="(data, index) in people" :key="index">
+                <img :src="data.image" alt="Jane Doe">
+                <div>
+                    <h1 class="text-3xl font-semibold py-2">{{ data.name }}</h1>
+                    <h2 class="text-2xl font-normal">{{ data.designation }}</h2>
+                    <p class="text-xl py-2">{{ data.location }}</p>
+                </div>
+            </section>
         </section>
-    </section>
+</section>
 </template>
 
-<style scoped></style>
