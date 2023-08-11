@@ -1,47 +1,36 @@
 <script setup>
-import people from './data/data'
+import {ref} from 'vue'
+
+const number = ref(10)
+const animal = ref('')
+const searchUrl = 'https://www.pexels.com/search/'
 </script>
 
 <template>
-    <section>
-        <h1 style="text-align:center;margin:40px 0px;font-size:40px">Data Example</h1>
-        <section class="grid md:grid-cols-3 gap-8">
-            <!-- <section class="person">
-                <img :src="people[0].image" alt="Jane Doe">
-                <div>
-                    <h1 class="text-3xl font-semibold py-2">{{ people[0].name }}</h1>
-                    <h2 class="text-2xl font-normal">{{people[0].designation}}</h2>
-                    <p class="text-xl py-2">{{ people[0].location }}</p>
-                </div>
-            </section>
-            <section class="person">
-                <img :src="people[1].image" alt="Jane Doe">
-                <div>
-                    <h1 class="text-3xl font-semibold py-2">{{ people[1].name }}</h1>
-                    <h2 class="text-2xl font-normal">{{people[1].designation}}</h2>
-                    <p class="text-xl py-2">{{ people[1].location }}</p>
-                </div>
-            </section>
-            <section class="person">
-                <img :src="people[2].image" alt="Jane Doe">
-                <div>
-                    <h1 class="text-3xl font-semibold py-2">{{ people[2].name }}</h1>
-                    <h2 class="text-2xl font-normal">{{people[2].designation}}</h2>
-                    <p class="text-xl py-2">{{ people[2].location }}</p>
-                </div>
-            </section>
-             -->
+  <div class="container mx-auto flex items-center justify-center min-h-screen flex-col">
+      <h1 class="text-4xl">Welcome. Get ready to master Vue.js 3!</h1>
+      <h2 class="mt-10 text-xl text-gray-700">{{ number }} / 4 = {{ number / 4 }}</h2>
+      <h2 class="mt-10 text-xl text-gray-700">{{ number }} is {{ number % 2 == 0 ? "Even" : "Odd"  }}</h2>
 
-             <!-- loops people -->
-             <section v-for="(data, index) in people" :key="index">
-                <img :src="data.image" alt="Jane Doe">
-                <div>
-                    <h1 class="text-3xl font-semibold py-2">{{ data.name }}</h1>
-                    <h2 class="text-2xl font-normal">{{ data.designation }}</h2>
-                    <p class="text-xl py-2">{{ data.location }}</p>
-                </div>
-            </section>
-        </section>
-</section>
+      <input type="number" name="" id="" class="border-2 py-2 text-center" placeholder="Check Number" v-model="number">
+
+      <!-- search option -->
+      <!-- <h2 class="mt-10 text-xl text-gray-700">
+        <a target="_blank" :href="searchUrl+animal.toLowerCase()">Search For {{ animal }}</a>
+      </h2> -->
+      
+      <!-- dynamic search -->
+      <h2 class="mt-10 text-xl text-gray-700">
+        <a target="_blank" :href="`https://www.pexels.com/search/${animal.toLowerCase()}`">Search For {{ animal }}</a>
+      </h2>
+
+      <h2 class="mt-10 text-xl text-gray-700">
+        <a target="_blank" :href="`https://www.pexels.com/search/${animal.toLowerCase()}`">Search For {{ animal }}</a>
+      </h2>
+      <input type="text" name="" id="" class="border-2 py-2 text-center" placeholder="search animals" v-model="animal">
+  </div>
 </template>
 
+<style scoped>
+
+</style>
