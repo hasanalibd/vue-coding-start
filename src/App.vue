@@ -22,7 +22,7 @@ import images from './data/data'
 <template>
 <section class="container mx-auto p-10">
         <h1 class="text-4xl text-center mb-10">Data Project</h1>
-        <!-- <section class="main flex space-x-4">
+        <section class="main flex space-x-4">
             <div class="flex space-y-4 flex-col w-1/3">
                 <img :title="images[0].title" :src="images[0].image" alt="">
                 <h2 class="text-xl text-left">{{ images[0].title }}</h2>
@@ -44,9 +44,9 @@ import images from './data/data'
                     Image Source
                 </a>
             </div>
-        </section> -->
+        </section>
 
-        <div class="grid md:grid-cols-3 gap-5">
+        <!-- <div class="grid md:grid-cols-3 gap-5">
             <div class="space-y-4">
                 <img :title="images[0].title" :src="images[0].image" alt="">
                 <h2 class="text-xl text-left py-4">{{ images[0].title }}</h2>
@@ -68,7 +68,7 @@ import images from './data/data'
                     Image Source
                 </a>
             </div>
-        </div>
+        </div> -->
     </section>
 </template>
 
